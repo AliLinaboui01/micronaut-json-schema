@@ -30,6 +30,7 @@ include 'test-suite'
 include 'test-suite-generator-java'
 include 'test-suite-groovy'
 include 'test-suite-kotlin'
+include 'avro-serde'
 
 enableFeaturePreview 'TYPESAFE_PROJECT_ACCESSORS'
 
