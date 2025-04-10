@@ -1,0 +1,20 @@
+plugins {
+    id 'io.micronaut.build.internal.json-schema-module'
+}
+
+dependencies {
+    api("io.micronaut.serde:micronaut-serde-api:2.14.0")
+    api(projects.micronautJsonSchemaCommon)
+    testImplementation(mn.micronaut.inject.java.test)
+    implementation 'org.apache.avro:avro:1.11.0'
+    testAnnotationProcessor("io.micronaut.serde:micronaut-serde-processor:2.14.0")
+    testAnnotationProcessor(project(":micronaut-json-schema-processor"))
+    testImplementation(mnTest.micronaut.test.junit5)
+    testImplementation(libs.junit.jupiter.api)
+    testRuntimeOnly(libs.junit.jupiter.engine)
+    testImplementation(libs.junit.jupiter.params)
+}
+
+test {
+    useJUnitPlatform()
+}
